@@ -152,5 +152,6 @@ typings/
 # dotenv environment variables file
 .env
 
-
+# picture uploads dir
+public/uploads/*
 # End of https://www.gitignore.io/api/node

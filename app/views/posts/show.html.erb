@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+<h2><%= bulletin_name params[:bulletin_id] %></h2>
+<table class="table">
+  <tr>
+    <th>Title</th>
+    <td><%= @post.title %></td>
+  </tr>
+  <tr>
+    <th>Content</th>
+    <td><%= @post.context %></td>
+  </tr>
+  <tr>
+    <th>Created at</th>
+    <td><%= @post.created_at %></td>
+  </tr>
+</table>
+
+<%= link_to 'Edit', (@bulletin.present? ? edit_bulletin_post_path(@bulletin) : edit_post_path(@post)) %> |
+<%= link_to 'List', (@bulletin.present? ? bulletin_posts_path(@bulletin) : posts_path), class: 'btn btn-default' %>
+
+<%= render 'comments/comments' %>
