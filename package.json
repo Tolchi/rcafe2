@@ -2,7 +2,11 @@
   "name": "rcafe2",
   "private": true,
   "dependencies": {
+    "@rails/webpacker": "^3.0.0",
     "jquery": "^3.2.1",
     "jquery-ujs": "^1.2.2"
+  },
+  "devDependencies": {
+    "webpack-dev-server": "^2.7.1"
   }
 }

@@ -25,6 +25,7 @@ gem 'simple_form'
 gem 'therubyracer', platforms: :ruby
 gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
+gem 'webpacker', '~> 3.0'
 # gem 'redis', '~> 3.0'
 
 # Use Capistrano for deployment
@@ -40,8 +41,7 @@ group :development do
   gem 'awesome_print'
   gem 'better_errors'
   gem 'binding_of_caller'
-  gem 'rb-fsevent'
-  gem 'growl'
+  gem 'rb-fsevent', require: false
   # guard and plugins
   gem 'guard-annotate'
   gem 'guard-brakeman'
@@ -51,7 +51,6 @@ group :development do
   gem 'guard-rails', require: false
   gem 'guard-zeus'
   gem 'listen', '>= 3.0.5', '< 3.2'
-  gem 'ruby_gntp'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'web-console', '>= 3.3.0'
