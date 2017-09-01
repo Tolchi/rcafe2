@@ -9,9 +9,19 @@
     <th>Content</th>
     <td><%= @post.context %></td>
   </tr>
+  <% if @post.bulletin.post_type == :gallery %>
+    <tr>
+      <th>Picture</th>
+      <td><%= image_tag @post.picture_url %></td>
+    </tr>
+  <% end %>
   <tr>
     <th>Created at</th>
     <td><%= @post.created_at %></td>
+  </tr>
+  <tr>
+    <th>Tag list</th>
+    <td><%= tag_icons @post.tag_list %></td>
   </tr>
 </table>
 

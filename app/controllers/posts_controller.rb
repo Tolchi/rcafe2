@@ -5,7 +5,15 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = @bulletin.present? ? @bulletin.posts.all : Post.all
+    if @bulletin.present?
+      @posts = @bulletin.posts.all
+    else
+      if params[:tag]
+        @posts = Post.tagged_with(params[:tag])
+      else
+        @posts = Post.all
+      end
+    end
   end
 
   # GET /posts/1
@@ -75,6 +83,6 @@ class PostsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def post_params
-    params.require(:post).permit(:title, :context, :picture, :picture_cache)
+    params.require(:post).permit(:title, :context, :picture, :picture_cache, :tag_list_fixed)
   end
 end
